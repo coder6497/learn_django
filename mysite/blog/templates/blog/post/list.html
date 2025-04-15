@@ -1,0 +1,22 @@
+{% extends "blog/base.html" %}
+{% block title %}My Blog{% endblock %}
+
+{% block body %}
+    <div class="container-md">
+        <h1>Посты</h1>
+        <div class="list-group">
+            {% for post in posts %}
+                <a href="{% url 'blog:post_detail' post.id %}" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">{{post.title}}</h5>
+                        <small class="text-body-secondary">{{post.publish}}</small>
+                    </div>
+                    <p class="mb-1">{{post.body|truncatewords:30}}</p>
+                    <small class="text-body-secondary">And some muted small print.</small>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+
+
+{% endblock %}

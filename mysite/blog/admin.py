@@ -8,3 +8,4 @@ class PostAdmin(admin.ModelAdmin):
     prepopulated_fields ={'slug': ('title',)}
     date_hierarchy = 'publish'
     ordering = ['publish']
+    show_facets = admin.ShowFacets.ALWAYS
