@@ -9,6 +9,8 @@
         </div>
         <br>
         <h5><p>{{ post.publish }} {{ post.author }}</p></h5>
+        <br><br>
+        <p><a href="{% url "blog:post_share" post.id %}" class="link-underline-secondary">Отправить по почте</a></p>
     </div>
 
 {% endblock %}

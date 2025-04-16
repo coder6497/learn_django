@@ -19,13 +19,13 @@
         <nav aria-label="Page navigation example">
             <ul class="pagination">
               {% if posts.has_previous %}
-                    <li class="page-item"><a class="page-link" href="?posts={{ posts.previous_page_number }}">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="?posts={{ posts.previous_page_number }}">Назад</a></li>
               {% endif %}
               {%for num in posts.paginator.page_range%}
                     <li class="page-item"><a class="page-link" href="?posts={{ num }}">{{ num }}</a></li>
               {% endfor %}
               {% if posts.has_next %}
-                    <li class="page-item"><a class="page-link" href="?posts={{ posts.next_page_number }}">Next</a></li>
+                    <li class="page-item"><a class="page-link" href="?posts={{ posts.next_page_number }}">Вперед</a></li>
               {% endif %}
             </ul>
         </nav>
