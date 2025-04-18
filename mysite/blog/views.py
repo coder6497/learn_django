@@ -33,8 +33,8 @@ def post_share(request, post_id):
         if form.is_valid():
             cd = form.cleaned_data
             post_url = request.build_absolute_uri(post.get_absolute_url())
-            subject = f"{cd['name']} рекомендует вам прочесть f{post.title}"
-            message = f'Посмотреть {post.title} по адресу {post_url}\n\nСообщение от {cd["name"]}: {cd['comments']}'
+            subject = f"{cd['name']} рекомендует вам прочесть {post.title}"
+            message = f"Посмотреть {post.title} по адресу {post_url}\n\nСообщение от {cd['name']}: {cd['comments']}"
             send_mail(subject, message, 'rty.sem@yandex.ru', [cd['to']])
             sent = True
     else:
