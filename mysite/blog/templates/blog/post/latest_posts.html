@@ -1,0 +1,8 @@
+<div class="alert alert-success" role="alert">
+    <h5>Последние посты</h5>
+    <ul>
+        {% for post in latest_posts %}
+            <li><a href="{{ post.get_absolute_url }}" >{{ post.title }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
