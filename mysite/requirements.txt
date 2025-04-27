@@ -1,0 +1,8 @@
+Django
+python-decouple
+psycopg2
+psycopg2-binary
+django-crispy-forms
+crispy-bootstrap5
+django-taggit
+gunicorn
