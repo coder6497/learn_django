@@ -28,7 +28,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', '0') == '1'
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ['coder6497-learn-django-a5fa.twc1.net']
 
 
 # Application definition
@@ -149,3 +149,7 @@ DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
 
 EMAIL_SERVER = EMAIL_HOST_USER
 EMAIL_ADMIN = EMAIL_HOST_USER
+
+CSRF_TRUSTED_ORIGINS = [
+    'coder6497-learn-django-a5fa.twc1.net',  # Основной домен
+]
