@@ -151,5 +151,5 @@ EMAIL_SERVER = EMAIL_HOST_USER
 EMAIL_ADMIN = EMAIL_HOST_USER
 
 CSRF_TRUSTED_ORIGINS = [
-    'coder6497-learn-django-a5fa.twc1.net',  # Основной домен
+    'http://coder6497-learn-django-a5fa.twc1.net',  # Основной домен
 ]
