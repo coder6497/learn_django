@@ -1,0 +1,28 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Отпраивить по почте{% endblock %}
+{% block body %}
+    <div class="container-md">
+        {% if sent %}
+            <h1>E-mail отправлен успешно</h1>
+            <p>"{{ post.title }}": успешно отправлен {{ form.cleaned_data.to }}</p>
+        {% else %}
+            <h1>Отправить "{{ post.title }}" по e-mail</h1>
+            <div class="user_container">
+                {% load crispy_forms_tags %}
+                <form method="post">
+                    <style>
+                        .user_container
+                        {
+                            width: 35%;   
+                        }
+                    </style>
+                    {{ form|crispy }}
+                    {% csrf_token %}
+                    <br>
+                    <input class="btn btn-primary" type="submit" value="Отправить">
+                </form>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% load crispy_forms_tags %}
+{% if comment %}
+    <h1>Коментарий успешно добавлен</h1>
+    <a href="{{ post.get_absolute_url }}">Вернуться к посту</a>
+{% else %}
+    <h4>Добавить коментарий</h4>
+    <form action="{% url "blog:post_comment" post.id %}" method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <br>
+        <button class="btn btn-success" type="submit">Добавить</button>
+    </form>
+{% endif %}
