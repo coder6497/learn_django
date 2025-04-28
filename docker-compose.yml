@@ -4,9 +4,6 @@ services:
     volumes:
       - postgres_data:/var/lib/postresql/data/
     env_file:
-      - ./.env
-    networks:
-      - app_network
 
   web:
     build: .
@@ -17,12 +14,7 @@ services:
       - db
     ports:
       - "8000:8000"
-    networks:
-      - app_network
-
-
-volumes:
-  postgres_data:
-
-networks:
-  app_network:
+    environment:
+      - DATABASE_URL=postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:5432/${POSTGRES_DB}
+      - SECRET_KEY=${SECRET_KEY}
+      - DEBUG=${DEBUG}
